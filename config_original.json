@@ -13,28 +13,28 @@
     },
 
     "train_loader": {
-        "type": "KHNP",
+        "type": "VOC",
         "args": {
-            "data_dir": "../khnp_seg_voc/",
-            "batch_size": 4,
-            "base_size": 640,
-            "crop_size": 480,
+            "data_dir": "data/VOCtrainval_11-May-2012",
+            "batch_size": 8,
+            "base_size": 400,
+            "crop_size": 380,
             "augment": true,
             "shuffle": true,
             "scale": true,
             "flip": true,
             "rotate": true,
-            "blur": true,
-            "split": "train",
-            "num_workers": 4
+            "blur": false,
+            "split": "train_aug",
+            "num_workers": 8
         }
     },
 
     "val_loader": {
-        "type": "KHNP",
+        "type": "VOC",
         "args": {
-            "data_dir": "../khnp_seg_voc/",
-            "batch_size": 4,
+            "data_dir": "data/VOCtrainval_11-May-2012",
+            "batch_size": 8,
             "crop_size": 480,
             "val": true,
             "split": "val",
@@ -60,7 +60,7 @@
     },
 
     "trainer": {
-        "epochs": 200,
+        "epochs": 80,
         "save_dir": "saved/",
         "save_period": 10,
 

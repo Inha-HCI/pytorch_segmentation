@@ -83,6 +83,7 @@ class BaseTrainer:
 
     def _get_available_devices(self, n_gpu):
         sys_gpu = torch.cuda.device_count()
+        print(sys_gpu)
         if sys_gpu == 0:
             self.logger.warning('No GPUs detected, using the CPU')
             n_gpu = 0

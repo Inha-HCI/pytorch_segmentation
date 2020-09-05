@@ -8,7 +8,8 @@ import inspect
 import math
 from utils import losses
 from utils import Logger
-from utils.torchsummary import summary
+# from utils.torchsummary import summary
+from torch.utils.tensorboard import SummaryWriter
 from trainer import Trainer
 
 def get_instance(module, name, config, *args):
@@ -48,7 +49,7 @@ if __name__=='__main__':
                         help='Path to the config file (default: config.json)')
     parser.add_argument('-r', '--resume', default=None, type=str,
                         help='Path to the .pth model checkpoint to resume training')
-    parser.add_argument('-d', '--device', default=None, type=str,
+    parser.add_argument('-d', '--device', default='0', type=str,
                            help='indices of GPUs to enable (default: all)')
     args = parser.parse_args()
 
